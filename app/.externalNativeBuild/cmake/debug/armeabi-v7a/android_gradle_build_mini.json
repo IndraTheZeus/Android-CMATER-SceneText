@@ -1,0 +1,21 @@
+{
+  "buildFiles": [
+    "D:\\Android_Projects\\Scene_Text_Working_v1\\SceneTextRecognition\\app\\CMakeLists.txt"
+  ],
+  "cleanCommands": [
+    "C:\\Users\\Dell\\AppData\\Local\\Android\\Sdk\\cmake\\3.6.4111459\\bin\\cmake.exe --build D:\\Android_Projects\\Scene_Text_Working_v1\\SceneTextRecognition\\app\\.externalNativeBuild\\cmake\\debug\\armeabi-v7a --target clean"
+  ],
+  "libraries": {
+    "lib_opencv-Debug-armeabi-v7a": {
+      "artifactName": "lib_opencv",
+      "abi": "armeabi-v7a",
+      "output": "D:\\Android_Projects\\Scene_Text_Working_v1\\SceneTextRecognition\\app\\src\\main\\jniLibs\\armeabi-v7a\\libopencv_java4.so"
+    },
+    "native-lib-Debug-armeabi-v7a": {
+      "artifactName": "native-lib",
+      "buildCommand": "C:\\Users\\Dell\\AppData\\Local\\Android\\Sdk\\cmake\\3.6.4111459\\bin\\cmake.exe --build D:\\Android_Projects\\Scene_Text_Working_v1\\SceneTextRecognition\\app\\.externalNativeBuild\\cmake\\debug\\armeabi-v7a --target native-lib",
+      "abi": "armeabi-v7a",
+      "output": "D:\\Android_Projects\\Scene_Text_Working_v1\\SceneTextRecognition\\app\\build\\intermediates\\cmake\\debug\\obj\\armeabi-v7a\\libnative-lib.so"
+    }
+  }
+}

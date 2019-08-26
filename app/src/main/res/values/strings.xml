@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Scene Text Recognition</string>
+    <string name="button_direct_translate">Take picture and translate text</string>
+</resources>

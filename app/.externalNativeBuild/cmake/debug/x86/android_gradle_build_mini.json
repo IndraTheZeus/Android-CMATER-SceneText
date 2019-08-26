@@ -1,0 +1,21 @@
+{
+  "buildFiles": [
+    "D:\\Android_Projects\\Scene_Text_Working_v1\\SceneTextRecognition\\app\\CMakeLists.txt"
+  ],
+  "cleanCommands": [
+    "C:\\Users\\Dell\\AppData\\Local\\Android\\Sdk\\cmake\\3.6.4111459\\bin\\cmake.exe --build D:\\Android_Projects\\Scene_Text_Working_v1\\SceneTextRecognition\\app\\.externalNativeBuild\\cmake\\debug\\x86 --target clean"
+  ],
+  "libraries": {
+    "lib_opencv-Debug-x86": {
+      "artifactName": "lib_opencv",
+      "abi": "x86",
+      "output": "D:\\Android_Projects\\Scene_Text_Working_v1\\SceneTextRecognition\\app\\src\\main\\jniLibs\\x86\\libopencv_java4.so"
+    },
+    "native-lib-Debug-x86": {
+      "artifactName": "native-lib",
+      "buildCommand": "C:\\Users\\Dell\\AppData\\Local\\Android\\Sdk\\cmake\\3.6.4111459\\bin\\cmake.exe --build D:\\Android_Projects\\Scene_Text_Working_v1\\SceneTextRecognition\\app\\.externalNativeBuild\\cmake\\debug\\x86 --target native-lib",
+      "abi": "x86",
+      "output": "D:\\Android_Projects\\Scene_Text_Working_v1\\SceneTextRecognition\\app\\build\\intermediates\\cmake\\debug\\obj\\x86\\libnative-lib.so"
+    }
+  }
+}
