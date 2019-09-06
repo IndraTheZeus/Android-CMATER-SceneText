@@ -18,6 +18,8 @@ import android.widget.TextView;
 
 
 import org.opencv.android.CameraBridgeViewBase;
+import org.opencv.android.Utils;
+import org.opencv.core.CvType;
 import org.opencv.core.Mat;
 
 import java.io.File;
@@ -28,6 +30,10 @@ import java.io.IOException;
 
 
 public class MainActivity extends AppCompatActivity implements CameraBridgeViewBase.CvCameraViewListener2 {
+
+    static{
+        System.loadLibrary("native-lib");
+    }
 
     private MyTessOCR mTessOCR;
 
@@ -52,7 +58,7 @@ public class MainActivity extends AppCompatActivity implements CameraBridgeViewB
 
     private boolean isProcessing = false;
 
-
+   public native static void TextDetect(long addrRGBA);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -94,6 +100,12 @@ public class MainActivity extends AppCompatActivity implements CameraBridgeViewB
                    updateStatus("Recognizing Text...",90);
 
           */
+
+            Mat BGRImage = new Mat (bm.getWidth(), bm.getHeight(), CvType.CV_8UC3);
+            Utils.bitmapToMat(bm, BGRImage);
+            TextDetect(BGRImage.getNativeObjAddr());
+            bm = Bitmap.createBitmap(BGRImage.cols(), BGRImage.rows(), Bitmap.Config.ARGB_8888);
+            Utils.matToBitmap(BGRImage, bm);
             mTessOCR = new MyTessOCR(MainActivity.this);
 
              TextRead = mTessOCR.getOCRResult(bm);
