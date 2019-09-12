@@ -10,6 +10,7 @@ import android.provider.MediaStore;
 import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -58,7 +59,7 @@ public class MainActivity extends AppCompatActivity implements CameraBridgeViewB
 
     private boolean isProcessing = false;
 
-   public native static void TextDetect(long addrRGBA);
+   public native static int[] TextDetect(long addrRGBA);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -103,13 +104,15 @@ public class MainActivity extends AppCompatActivity implements CameraBridgeViewB
 
             Mat BGRImage = new Mat (bm.getWidth(), bm.getHeight(), CvType.CV_8UC3);
             Utils.bitmapToMat(bm, BGRImage);
-            TextDetect(BGRImage.getNativeObjAddr());
+            int ret[] = TextDetect(BGRImage.getNativeObjAddr());
+
+            Log.d("MYTag",Integer.toString(ret[0]));
             bm = Bitmap.createBitmap(BGRImage.cols(), BGRImage.rows(), Bitmap.Config.ARGB_8888);
             Utils.matToBitmap(BGRImage, bm);
             mTessOCR = new MyTessOCR(MainActivity.this);
 
-             TextRead = mTessOCR.getOCRResult(bm);
 
+            TextRead = mTessOCR.getOCRResult(bm);
 
 
 
